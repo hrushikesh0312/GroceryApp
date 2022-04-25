@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    
+    <!-- two way data binding  -->
+    <!-- <input type="text" [(ngModel)]="searchStr"> -->
+    <!-- //You are searching according to {{searchStr}} -->
+        <div class="row mt-3" *ngIf="grocerys.length!=0">
+    
+    
+            <div class="card m-3 col-12" style="width: 18rem;" *ngFor="let grocery of grocerys"> 
+                               <div >
+                    <img class="card-img-top" [src]="grocery.image" alt="Card image cap" *ngIf="grocery.flag">
+    
+    
+                    <div class="card-body">
+                            <p class="card-title " *ngIf="grocery.flag">{{grocery.groceryId}}</p>
+                        <h5 class="card-title">{{grocery.name}}</h5>
+                        <p class="card-text">{{grocery.price}}</p>
+                       <!-- <div class="text-center"> <a href="#" class="btn btn-primary" (click)="toggleImage(employee)">Show Details</a></div> -->
+    <!--  above is link so it is searching for new path hence4 it will hide whole page on clicking toggle so provide a simple button here -->
+           <div class="text-center"> <button class="btn btn-primary" (click)="toggleImage(grocery)">Show Details</button></div>
+    
+                 </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
